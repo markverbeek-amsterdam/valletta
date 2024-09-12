@@ -1,13 +1,14 @@
 <template>
 	<div class="container">
 		<div class="sidebar">
-			<h2>Choose a category</h2>
+			<h2 class="sidebar-title">Choose a category</h2>
 			<div class="accordion">
 				<div v-for="category in categories" :key="category.ID" class="accordion-item">
 					<div class="accordion-header" @click="toggleAccordion(category)"
 						:class="{ active: activeAccordion === category.ID }">
-						<h3>{{ category.name }}</h3>
+						<h3 class="category-name">{{ category.name }}</h3>
 					</div>
+
 					<div class="accordion-body" v-if="activeAccordion === category.ID">
 
 						<ul>
@@ -211,5 +212,3 @@ const selectSubCategory = (item) => {
 	}
 };
 </script>
-
-<style scoped></style>
