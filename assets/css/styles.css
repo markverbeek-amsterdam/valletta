@@ -85,10 +85,23 @@ body {
 
 }
 
+.accordion-header {}
+
+.accordion-header.active {
+  background-color: #e2e2e2;
+}
+
+.accordion-body {
+  overflow: hidden;
+  transition: height 0.3s ease, opacity 0.3s ease;
+}
+
 
 .accordion-header {
-  background-color: white;
-  border: 1px solid lightgrey;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
   color: black;
   padding: 20px;
   cursor: pointer;
@@ -111,7 +124,7 @@ body {
 }
 
 .accordion-body {
-  padding: 10px 0;
+  padding: 0;
 }
 
 .accordion-body {
@@ -129,10 +142,8 @@ body {
 }
 
 .accordion-enter-to {
-  max-height: 500px;
-  /* You can adjust this to suit your content */
+  max-height: 400px;
 }
-
 
 .category-name {
   margin: 0;
@@ -153,7 +164,6 @@ body {
 .accordion-body button {
   display: block;
   width: 100%;
-  margin-bottom: 5px;
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
@@ -161,6 +171,7 @@ body {
   border: none;
   text-align: left;
   color: #FF9700;
+  margin-bottom: 10px;
 }
 
 ul {

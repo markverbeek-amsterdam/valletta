@@ -9,16 +9,16 @@
 						<h3 class="category-name">{{ category.name }}</h3>
 					</div>
 
-					<div class="accordion-body" v-if="activeAccordion === category.ID">
-
-						<ul>
-							<button v-for="item in category.items" :key="item.ID"
-								@click="selectSubCategory(item, category)">
-								<li class="category-item">{{ item.header }}</li>
-							</button>
-						</ul>
-
-					</div>
+					<transition @enter="enter" @leave="leave">
+						<div class="accordion-body" v-if="activeAccordion === category.ID" ref="accordionBody">
+							<ul>
+								<button v-for="item in category.items" :key="item.ID"
+									@click="selectSubCategory(item, category)">
+									<li class="category-item">{{ item.header }}</li>
+								</button>
+							</ul>
+						</div>
+					</transition>
 				</div>
 			</div>
 		</div>
@@ -52,7 +52,6 @@ if (error.value) {
 } else {
 	categories.value = categoryData.value || [];
 }
-categories.value = categoryData.value || [];
 
 const mapConfig = {
 	zoom: 15,
@@ -211,4 +210,22 @@ const selectSubCategory = (item) => {
 		}
 	}
 };
+
+function enter(el) {
+	el.style.height = '0';
+	el.style.opacity = '0';
+	setTimeout(() => {
+		el.style.height = el.scrollHeight + 'px';
+		el.style.opacity = '1';
+	}, 0);
+}
+
+function leave(el) {
+	el.style.height = el.scrollHeight + 'px';
+	el.style.opacity = '1';
+	setTimeout(() => {
+		el.style.height = '0';
+		el.style.opacity = '0';
+	}, 0);
+}
 </script>
