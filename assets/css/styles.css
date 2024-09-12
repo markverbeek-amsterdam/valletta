@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#gmap {
+  flex: 1;
+  height: 100%
+}
+
+.container {
+  display: flex;
+
+}
+
+.sidebar {
+  width: 25%;
+  height: 600px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  padding: 50px 75px;
+}
+
+.map-container {
+  width: 75%;
+}
+
+@media (max-width: 968px) {
+
+  .sidebar,
+  .map-container {
+    width: 100%;
+  }
+
+  .sidebar {
+    height: 100%;
+  }
+
+  .map-container {
+    height: 400px;
+  }
+
+  .container {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .sidebar,
+  .map-container {
+    width: 100%;
+  }
+
+  .sidebar {
+    order: 2;
+  }
+
+  .map-container {
+    order: 1;
+  }
+
+  .container {
+    flex-wrap: wrap;
+  }
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: lighter;
+  color: #222;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+}
+
+.accordion-header {
+  background-color: white;
+  border: 1px solid lightgrey;
+  color: black;
+  padding: 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: lighter;
+  transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease;
+
+}
+
+.accordion-header:hover {
+  background-color: #f48c32;
+  border: 1px solid #f48c32;
+  color: white;
+
+}
+
+.accordion-header.active {
+  border: 1px solid #f48c32;
+  background-color: #f48c32;
+  color: white;
+}
+
+.accordion-body {
+  background-color: white;
+  padding: 10px 0;
+
+}
+
+.accordion-body button {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  color: #f48c32;
+}
+
+ul li::marker {
+  color: darkgray;
+}
