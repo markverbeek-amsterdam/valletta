@@ -85,8 +85,6 @@ body {
 
 }
 
-.accordion-header {}
-
 .accordion-header.active {
   background-color: #e2e2e2;
 }
